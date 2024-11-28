@@ -53,7 +53,16 @@ num <- 3.14
 char <- "R is awesome"
 logical <- TRUE
 
-Подсказки
+# числа в научной нотации
+e <- 0.0000000001
+e
+t <- 9647855664111 
+t
+options(scipen = 999)
+e
+t
+
+# Подсказки
 paste0(num," ", char)
 paste0(num, char)
 
@@ -85,8 +94,11 @@ vec
 # 2. Операции с векторами  
 
 vec + 10
+1/vec
 vec[3]  # Обращение по индексу
 vec[c(1, 5)]  # Обращение к нескольким элементам
+length(vec) # Количество элементов
+
 
 # 3. Логические операции  
 
@@ -95,10 +107,14 @@ vec[vec > 3]
 
 # 4. Матрицы и их создание  
 
-mat <- matrix(1:9, nrow = 3, byrow = TRUE)
+mat <- matrix(1:12, nrow = 4, byrow = TRUE)
 mat
 mat[1, ]  # Первая строка
 mat[, 2]  # Второй столбец
+
+# Размеры матрицы
+nrow(mat)
+ncol(mat)
 
 # ---
 #      
@@ -109,6 +125,7 @@ mat[, 2]  # Второй столбец
 mean(vec)
 sum(vec)
 sd(vec)
+var(vec)
 
 # - Создание пользовательской функции:  
 squre <- function(a) {
@@ -123,6 +140,8 @@ plus <- function(a, b) {
 
 plus(3, 5)
 plus(-3, 5)
+
+sum((vec-mean(vec))^2)/(length(vec)-1) #дисперсия
 
 # 2. Работа с данными  
 # - Загрузка датафрейма:  
